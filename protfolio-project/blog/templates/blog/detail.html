@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
 
-
-  <title>Zhengkai Zhang</title>
+  <title>{{blog.title}}</title>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -30,43 +30,20 @@
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link " href="http://linkedin.com/in/kirk-zhang-68b265117/">Linkedin</a>
           <a class="nav-item nav-link" href="{% static 'myresume.pdf' %}">Resume</a>
-          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+          <a class="nav-item nav-link active" href="#">Blog</a>
         </div>
       </div>
     </nav>
   </header>
 
   <main role="main">
+    <div class="container">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Hello I'm Kirk</h1>
-        <p class="lead text-muted">Hi, My name is Zhengkai Zhang. I'm looking for fullstack developer job!</p>
-        <p>
-          <a href="mailto:kirkzhang49@gmail.com" class="btn btn-primary my-2">Email Me</a>
-        </p>
-        <img src="{% static 'profile.png' %}" alt="">
-      </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-      <div class="container">
-
-        <div class="row">
-
-          {% for job in jobs.all %}
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img class="card-img-top"" src="{{job.image.url}}">
-              <div class="card-body">
-                <p class="card-text">{{job.summary}}</p>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-
-          </div>
-
+    <h1 class="text-center pt-3">{{blog.title}}</h1>
+    <p class="text-center">{{blog.pub_date}}</p>
+  <img class="imge-fluid" src="{{blog.image.url}}" />
+      <br/>
+      <p>{{blog.body}}</p>
     </div>
 
   </main>
